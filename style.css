@@ -1,26 +1,25 @@
 body {
   margin: 0;
-  font-family: "Press Start 2P", monospace;
-  background: #0b0f1a;
-  color: #fff;
-  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #1a1f2e, #0b0f1a);
+  color: white;
+  overflow-x: hidden;
 }
 
-/* 像素网格背景 */
+/* 背景粒子网格 */
 .bg-grid {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.4;
 }
 
-/* 容器 */
+/* 主容器 */
 .container {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,90 +28,110 @@ body {
 /* 页面切换 */
 .screen {
   display: none;
+  width: 100%;
   text-align: center;
+  animation: fade 0.6s ease;
 }
 
 .screen.active {
   display: block;
 }
 
-/* 标题 */
-.title {
-  font-size: 24px;
-  margin-bottom: 30px;
-  color: #ffd36c;
-  text-shadow: 2px 2px #000;
+@keyframes fade {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-/* 面板 */
+/* Canva风卡片面板 */
 .panel {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 260px;
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
-input, select, button {
+/* 输入 */
+input, select {
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
-  border: 2px solid #fff;
-  background: #111;
-  color: #fff;
-  font-family: inherit;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
 }
 
+/* 按钮 */
 button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #7c5cff, #46d3ff);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #ffd36c;
-  color: #000;
 }
 
 /* 抽牌动画 */
 .deck {
-  width: 120px;
-  height: 180px;
-  margin: 0 auto;
   position: relative;
+  height: 200px;
 }
 
 .card-anim {
   width: 120px;
   height: 180px;
-  background: #222;
-  border: 2px solid #fff;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #fff, #ddd);
+  border-radius: 12px;
   animation: draw 1s ease forwards;
 }
 
 @keyframes draw {
-  0% {
-    transform: translateY(200px) scale(0.5) rotate(0deg);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scale(1) rotate(360deg);
-    opacity: 1;
-  }
+  0% {transform: translate(-50%, 200px) scale(0.5) rotate(0);}
+  100% {transform: translate(-50%, 0) scale(1) rotate(360deg);}
 }
 
-/* 结果卡 */
+/* 结果卡片（Canva风重点） */
 .cards {
   display: flex;
-  gap: 10px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
 }
 
 .tarot-card {
-  width: 120px;
-  height: 180px;
-  border: 2px solid #fff;
-  background: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 180px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: 0.3s;
+}
+
+.tarot-card:hover {
+  transform: translateY(-5px);
+}
+
+.tarot-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* AI解读 */
+.ai-box {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  font-size: 12px;
+  color: #cfd6ff;
 }
