@@ -1,27 +1,32 @@
 [
   {
     "name": "The Fool",
-    "desc": "新的开始，冒险精神",
-    "type": "personality"
+    "desc": "新的开始，冒险与自由",
+    "type": "personality",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg"
   },
   {
     "name": "The Star",
-    "desc": "希望与指引",
-    "type": "emotion"
-  },
-  {
-    "name": "The Tower",
-    "desc": "变化与冲击",
-    "type": "career"
+    "desc": "希望、治愈与指引",
+    "type": "emotion",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg"
   },
   {
     "name": "The Sun",
-    "desc": "成功与能量",
-    "type": "emotion"
+    "desc": "成功、能量与快乐",
+    "type": "career",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg"
   },
   {
     "name": "The Moon",
     "desc": "潜意识与迷惑",
-    "type": "personality"
+    "type": "emotion",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg"
+  },
+  {
+    "name": "The Tower",
+    "desc": "突变与重建",
+    "type": "career",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg"
   }
 ]
