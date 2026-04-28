@@ -1,0 +1,27 @@
+[
+  {
+    "name": "The Fool",
+    "desc": "新的开始，冒险精神",
+    "type": "personality"
+  },
+  {
+    "name": "The Star",
+    "desc": "希望与指引",
+    "type": "emotion"
+  },
+  {
+    "name": "The Tower",
+    "desc": "变化与冲击",
+    "type": "career"
+  },
+  {
+    "name": "The Sun",
+    "desc": "成功与能量",
+    "type": "emotion"
+  },
+  {
+    "name": "The Moon",
+    "desc": "潜意识与迷惑",
+    "type": "personality"
+  }
+]
