@@ -26,7 +26,7 @@ A pixel-style tarot reading web app with AI interpretation and animation effects
 ## 🧠 Core Concept
 
 This project simulates a “personality-based tarot system”:
-
+birthdate + gender → hash → deterministic shuffle → tarot cards
 
 No real randomness → ensures reproducibility.
 
@@ -43,7 +43,12 @@ No real randomness → ensures reproducibility.
 ---
 
 ## 📁 Project Structure
-
+pixel-tarot-v3/
+├── index.html
+├── style.css
+├── app.js
+├── tarot.json
+└── ai.js
 ---
 
 ## 🎴 Example Flow
