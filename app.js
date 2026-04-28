@@ -11,9 +11,10 @@ const cardsBox = document.getElementById("cards");
 let tarotData = [];
 
 fetch("tarot.json")
-  .then(res => res.json())
-  .then(data => tarotData = data);
+  .then(r => r.json())
+  .then(d => tarotData = d);
 
+/* seed */
 function hash(str) {
   let h = 0;
   for (let i = 0; i < str.length; i++) {
@@ -22,6 +23,7 @@ function hash(str) {
   return h;
 }
 
+/* shuffle */
 function shuffle(seed) {
   let arr = [...tarotData];
   let r = seed;
@@ -35,47 +37,60 @@ function shuffle(seed) {
   return arr;
 }
 
-function showScreen(name) {
+/* 模拟AI解读 */
+function aiExplain(card, gender) {
+  return `AI解读（仅供参考）：
+你抽到【${card.name}】。
+结合你的状态，这张牌代表：${card.desc}。
+当前建议：保持觉察，避免过度依赖外界判断。`;
+}
+
+/* 页面切换 */
+function show(name) {
   home.classList.remove("active");
   draw.classList.remove("active");
   result.classList.remove("active");
-
   document.getElementById(name).classList.add("active");
 }
 
+/* 开始 */
 startBtn.onclick = () => {
-  const birthday = document.getElementById("birthday").value;
-  const gender = document.getElementById("gender").value;
+  const b = document.getElementById("birthday").value;
+  const g = document.getElementById("gender").value;
 
-  const seed = hash(birthday + gender);
+  const seed = hash(b + g);
 
-  showScreen("draw");
+  show("draw");
 
   deck.innerHTML = "";
 
-  // 动画卡
   for (let i = 0; i < 3; i++) {
-    const el = document.createElement("div");
-    el.className = "card-anim";
-    el.style.left = `${i * 10}px`;
-    el.style.animationDelay = `${i * 0.3}s`;
-    deck.appendChild(el);
+    const d = document.createElement("div");
+    d.className = "card-anim";
+    d.style.left = `${50 + i * 10}%`;
+    d.style.animationDelay = i * 0.2 + "s";
+    deck.appendChild(d);
   }
 
   setTimeout(() => {
-    const resultCards = shuffle(seed).slice(0, 3);
+    const cards = shuffle(seed).slice(0, 3);
 
-    cardsBox.innerHTML = resultCards.map(c => `
+    cardsBox.innerHTML = cards.map(c => `
       <div class="tarot-card">
-        <div>${c.name}</div>
-        <div style="font-size:10px;margin-top:10px;">${c.desc}</div>
+        <img src="${c.img}" />
+        <h3>${c.name}</h3>
+        <p style="font-size:12px">${c.desc}</p>
       </div>
     `).join("");
 
-    showScreen("result");
+    cardsBox.innerHTML += `
+      <div class="ai-box">
+        ${aiExplain(cards[0], g)}
+      </div>
+    `;
+
+    show("result");
   }, 1500);
 };
 
-restart.onclick = () => {
-  showScreen("home");
-};
+restart.onclick = () => show("home");
