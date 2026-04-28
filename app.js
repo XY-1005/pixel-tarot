@@ -94,3 +94,76 @@ startBtn.onclick = () => {
 };
 
 restart.onclick = () => show("home");
+import { getAIReading } from "./ai.js";
+
+const state = {
+  cards: [],
+  user: null
+};
+
+function seed(str) {
+  let h = 0;
+  for (let c of str) h = (h * 31 + c.charCodeAt(0)) % 100000;
+  return h;
+}
+
+function shuffle(arr, s) {
+  let r = s;
+  let a = [...arr];
+
+  for (let i = a.length - 1; i > 0; i--) {
+    r = (r * 9301 + 49297) % 233280;
+    const j = r % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* 主流程 */
+async function startGame() {
+  const birthday = document.querySelector("#birthday").value;
+  const gender = document.querySelector("#gender").value;
+
+  const user = { birthday, gender };
+  state.user = user;
+
+  const s = seed(birthday + gender);
+
+  const res = shuffle(window.TAROT, s).slice(0, 3);
+  state.cards = res;
+
+  renderCards(res);
+}
+
+/* 渲染卡牌（3D翻转） */
+function renderCards(cards) {
+  const box = document.querySelector("#cards");
+
+  box.innerHTML = cards.map((c, i) => `
+    <div class="card-3d" onclick="flip(this, ${i})">
+      <div class="card-inner">
+        <div class="card-front"></div>
+        <div class="card-back">
+          <img src="${c.img}" style="width:100%;border-radius:12px"/>
+          <p>${c.name}</p>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+/* 翻牌 */
+window.flip = async (el, index) => {
+  el.classList.add("flipped");
+
+  const card = state.cards[index];
+
+  const aiText = await getAIReading(card, state.user);
+
+  const aiBox = document.querySelector("#ai");
+
+  aiBox.innerText = aiText;
+};
+
+/* 绑定 */
+document.querySelector("#start").onclick = startGame;
