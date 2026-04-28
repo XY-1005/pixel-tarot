@@ -1,32 +1,149 @@
 [
   {
+    "id": 0,
     "name": "The Fool",
-    "desc": "新的开始，冒险与自由",
-    "type": "personality",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg"
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg",
+    "desc": "象征新的开始、自由与未知的冒险。"
   },
   {
-    "name": "The Star",
-    "desc": "希望、治愈与指引",
-    "type": "emotion",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg"
+    "id": 1,
+    "name": "The Magician",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
+    "desc": "代表创造力、行动力与掌控现实的能力。"
   },
   {
-    "name": "The Sun",
-    "desc": "成功、能量与快乐",
-    "type": "career",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg"
+    "id": 2,
+    "name": "The High Priestess",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_02_High_Priestess.jpg",
+    "desc": "象征直觉、潜意识与隐藏的知识。"
   },
   {
-    "name": "The Moon",
-    "desc": "潜意识与迷惑",
-    "type": "emotion",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg"
+    "id": 3,
+    "name": "The Empress",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg",
+    "desc": "代表丰盛、创造力与母性力量。"
   },
   {
+    "id": 4,
+    "name": "The Emperor",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg",
+    "desc": "象征权威、结构与控制力。"
+  },
+  {
+    "id": 5,
+    "name": "The Lovers",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/3a/TheLovers.jpg",
+    "desc": "代表选择、关系与情感连接。"
+  },
+  {
+    "id": 6,
+    "name": "The Chariot",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/3b/RWS_Tarot_07_Chariot.jpg",
+    "desc": "象征意志力、胜利与方向掌控。"
+  },
+  {
+    "id": 7,
+    "name": "Strength",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg",
+    "desc": "代表内在力量、勇气与耐心。"
+  },
+  {
+    "id": 8,
+    "name": "The Hermit",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg",
+    "desc": "象征独处、思考与内在探索。"
+  },
+  {
+    "id": 9,
+    "name": "Wheel of Fortune",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg",
+    "desc": "代表命运、变化与周期性转折。"
+  },
+  {
+    "id": 10,
+    "name": "Justice",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e0/RWS_Tarot_11_Justice.jpg",
+    "desc": "象征公平、真相与因果。"
+  },
+  {
+    "id": 11,
+    "name": "The Hanged Man",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg",
+    "desc": "代表牺牲、暂停与换角度思考。"
+  },
+  {
+    "id": 12,
+    "name": "Death",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg",
+    "desc": "象征结束与重生，而非真正死亡。"
+  },
+  {
+    "id": 13,
+    "name": "Temperance",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg",
+    "desc": "代表平衡、节制与调和。"
+  },
+  {
+    "id": 14,
+    "name": "The Devil",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg",
+    "desc": "象征束缚、欲望与依赖关系。"
+  },
+  {
+    "id": 15,
     "name": "The Tower",
-    "desc": "突变与重建",
-    "type": "career",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg"
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
+    "desc": "代表突发改变与旧结构崩塌。"
+  },
+  {
+    "id": 16,
+    "name": "The Star",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg",
+    "desc": "象征希望、疗愈与未来方向。"
+  },
+  {
+    "id": 17,
+    "name": "The Moon",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg",
+    "desc": "代表迷惑、潜意识与不确定性。"
+  },
+  {
+    "id": 18,
+    "name": "The Sun",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg",
+    "desc": "象征成功、快乐与正能量。"
+  },
+  {
+    "id": 19,
+    "name": "Judgement",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg",
+    "desc": "代表觉醒、审视与重生。"
+  },
+  {
+    "id": 20,
+    "name": "The World",
+    "type": "Major Arcana",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg",
+    "desc": "象征完成、圆满与阶段性成功。"
   }
 ]
